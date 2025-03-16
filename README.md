@@ -1,11 +1,23 @@
 # stats220
 
-This is my repo for STATS 220. 
+# Project 1 PART A
 
-A little about me:
+## Ordered list
+A little bit about me:
+1. I am undertaking a degree in Statistics
+2. I am taking STATS 220 because it is a compulsory subject :)
+3. I am interested in learning about R as much as possible, because I will use it in the future
 
-- I am undertaking a degree in Statistics
-- I am taking STATS 220 because it is a compulsory subject :)
-- I am interested in learning about R as much as possible, because I will use it in the future
+## Unordered list
+**Other interesting facts:**
+* I am *vegetarian*
+* I love **plants**
+* That's why I eat *cows* to save grass
+* I also love coconuts
 
-A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
+[So here is more about coconuts] (https://en.wikipedia.org/wiki/Coconut)
+
+How I feel about Stats now:
+
+![My mood](https://media1.tenor.com/m/kHcmsxlKHEAAAAAC/rock-one-eyebrow-raised-rock-staring.gif)
+
