@@ -21,3 +21,6 @@ How I feel about Stats now:
 
 ![My mood](https://media1.tenor.com/m/kHcmsxlKHEAAAAAC/rock-one-eyebrow-raised-rock-staring.gif)
 
+
+Also here is the link to my inspo_meme: (https://images3.memedroid.com/images/UPLOADED451/5d8391f2ceaf5.jpeg)
+
