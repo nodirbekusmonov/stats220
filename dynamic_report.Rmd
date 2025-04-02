@@ -1,0 +1,78 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+library(tidyverse)
+```
+
+```{css}
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+  }
+  h2 {
+    color: red;
+  }
+  p {
+    font-size: 16px;
+  }
+```
+
+## Car Brand & Color Observations (Auckland Roads 2025)
+
+This dynamic report shows observational data collected from Auckland roads, with car brand types and colors recorded using a Google form.  
+23 entries were collected. The data is analysed using R and is also visualised below.
+
+
+```{r}
+# Load my csv file
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3vuqzd-x--wlYthlk6a3hyA8P_jO8eoAe_6t9VqhstOihY99kkFqjtYFzBmFskABWhy7HYZKt6_W2/pub?output=csv")
+
+# Renaming the variables
+latest_data <- logged_data %>%
+  rename(
+    brand = 'What car brand did you see?',
+    type = 'What type of brand is this?',
+    color = 'What was the color of the car?',
+    count = 'How many cars of this brand did you see today?'
+  )
+
+# Simplify the type column for plots
+latest_data <- latest_data %>%
+  mutate(type_short = case_when(
+    str_detect(type, "Japanese") ~ "Japanese",
+    str_detect(type, "German") ~ "German",
+    str_detect(type, "Korean") ~ "Korean",
+    str_detect(type, "American") ~ "American",
+    str_detect(type, "Other") ~ "Other",
+    str_detect(type, "Not sure") ~ "Not sure",
+    TRUE ~ "Unknown"
+  ))
+
+
+# Summary
+mean_count <- mean(latest_data$count, na.rm = TRUE)
+max_count <- max(latest_data$count, na.rm = TRUE)
+
+
+```
+The **average** number of cars of the same brand seen was `r round(mean_count, 2)` and the **maximum** observed was `r max_count`.
+
+```{r}
+# Charts
+ggplot(latest_data, aes(x = type_short)) +
+  geom_bar() +
+  labs(title = "Car Brands Observed", x = "Brand Type", y = "Count")
+```
+
+
+```{r}
+ggplot(latest_data, aes(x = color)) +
+  geom_bar() +
+  labs(title = "Car Colors Observed")
+
+
+```
