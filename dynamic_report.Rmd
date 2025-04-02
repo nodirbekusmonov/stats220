@@ -24,7 +24,7 @@ body {
 ## Car Brand & Color Observations (Auckland Roads 2025)
 
 This dynamic report shows observational data collected from Auckland roads, with car brand types and colors recorded using a Google form.  
-23 entries were collected. The data is analysed using R and is also visualised below.
+24 entries were collected. The data is analysed using R and is also visualised below.
 
 
 ```{r}
